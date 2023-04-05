@@ -2,89 +2,143 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Responsive Menu">
-    <title>Responsive Menu</title>
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles/main.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="This is a platform providing a systematic way to study and implement the characteristics of Jesus Christ into one's own self.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Develop Christ-like Attributes">
+  <meta property="og:site_name" content="Learning Christ-like Character">
+  <meta property="og:url" content="https://is-120-winter-2023.github.io/first-web-page-Adammross1/">
+  <meta property="og:description"
+    content="This is a platform providing a systematic way to study and implement the characteristics of Jesus Christ into one's own character.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/ChristOGimage.png">
+  <meta property="og:image:alt" content="Christ wearing a crown of thorns.">
+  <meta property="og:image:width" content="1200px">
+  <meta property="og:image:height" content="630px">
+
+  <!-- Title -->
+  <title>Home - Learn Christ-like Character</title>
+
+  <!-- Icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/christ-icon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/christ-icon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/christ-icon.svg">
+  <link rel="manifest" href="images/site.webmanifest">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;1,400;1,600&family=Courier+Prime:ital@0;1&display=swap"
+    rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 
-<body class="home">
-    <div class="hero">
-        <div class="text">
-            <div>
-                <h1>Lemur News Central</h1>
-                <p>Your number one source for lemur news</p>
-            </div>
-        </div>
-        <picture>
-            <source srcset="images/hero-1600.jpg" media="(min-width: 901px)">
-            <source srcset="images/hero-900.jpg" media="(min-width: 601px)">
-            <source srcset="images/hero-600.jpg" media="(max-width: 600px)">
-            <img src="images/hero-900.jpg"
-                alt="an up close view of water with some lens flare for drama">
-        </picture>
-    </div>
+<body>
+  <header>
+    <!-- Nav Bar -->
     <nav>
-        <h2 class="hidden">Main Menu</h2>
-        <ul>
-            <li><a>Home</a></li>
-            <li><a href="form/">Form</a></li>
-            <li><a href="about/">About</a></li>
-            <li><a href="#">Adopt</a></li>
-            <li><a href="#">Share</a></li>
-        </ul>
+      <ul>
+        <li class="listitem">Home</li>
+        <li class="listitem"><a href="About/index.html">About</a></li>
+        <li class="listitem"><a href="Contact/index.html">Contact</a></li>
+      </ul>
     </nav>
-    <main>
-        <article class="panel">
-            <div class="image-wrapper"><img src="images/lemur-1.jpg"
-                    alt="an unknown species lemur"></div>
-            <div class="text-wrapper">
-                <h2>What you need to know</h2>
-                <p>Lemurs (from Latin <em>lemures</em> &ndash; ghosts or
-                    spirits) are
-                    wet-nosed primates of the
-                    superfamily Lemuroidea, divided into 8 families and
-                    consisting of 15
-                    genera and around 100 existing species. They are native only
-                    to the
-                    island of Madagascar. Most existing lemurs are small, have a
-                    pointed
-                    snout, large eyes, and a long tail. They chiefly live in
-                    trees
-                    (arboreal), and are active at night (nocturnal).</p>
-                <p>Lemurs share resemblance with other primates, but evolved
-                    independently from monkeys and apes. Due to Madagascar's
-                    highly
-                    seasonal climate, lemur evolution has produced a level of
-                    species
-                    diversity rivaling that of any other primate group. Until
-                    shortly
-                    after humans arrived on the island around 2,000 years ago,
-                    there
-                    were lemurs as large as a male gorilla. Most species have
-                    been
-                    discovered or promoted to full species status since the
-                    1990s;
-                    however, lemur taxonomic classification is controversial and
-                    depends
-                    on which species concept is used. </p>
-            </div>
-        </article>
-    </main>
-    <footer>
-        <p>Foo</p>
-    </footer>
+
+  </header>
+
+  <div class="hero">
+    <picture>
+      <source media="(min-width: 801px)" srcset="images/herowhite2000.jpg">
+      <source media="(min-width: 401px)" srcset="images/herowhite800.jpg">
+      <source media="(max-width: 400px)" srcset="images/herowhite400.jpg">
+      <img src="images/herowhite800.jpg" alt="minimalistic white background picture">
+    </picture>
+    <div class="heading-background">
+      <h1>The Character of</h1>
+      <span class="keyword">CHRIST</span>
+      <p>A study resource to come closer to the Savior</p>
+    </div>
+  </div>
+
+  <main>
+    <article>
+      <h2>Christ-like Characteristics</h2>
+      <section class="cards">
+        <a href="https://www.churchofjesuschrist.org/study/liahona/2017/10/youth/a-christlike-character?lang=eng"
+          class="card">
+          <img src="images/selfless_card.jpg" width="500" height="500" loading="lazy" alt="Man praying">
+          <p class="card-font">Selflessness</p>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=qyuFWQdLyyg" class="card">
+          <img src="images/faith_card.jpg" width="500" height="500" loading="lazy" alt="Man praying">
+          <p class="card-font">Faith</p>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=OtFswHxjYec" class="card">
+          <img src="images/hope_card.jpg" width="500" height="500" loading="lazy" alt="Man praying">
+          <p class="card-font">Hope</p>
+        </a>
+
+        <a href="Attributes/charity.html" class="card">
+          <img src="images/charityAndLove_card.jpg" width="500" height="500" loading="lazy"
+            alt="Handing a heart-shape to someone">
+          <p class="card-font">Charity</p>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=HfybSAIJGh8" class="card">
+          <img src="images/virtue_card.jpg" width="500" height="500" loading="lazy" alt="Man praying">
+          <p class="card-font">Virtue</p>
+        </a>
+        <!-- </section>
+
+      <section class="cards"> -->
+        <a href="https://www.youtube.com/watch?v=WxhMS2FThUU" class="card">
+          <img src="images/knowledge_card.jpg" width="500" height="500" loading="lazy" alt="Man pondering">
+          <p class="card-font">Knowledge</p>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=g7g-6zDKznw" class="card">
+          <img src="images/patience_card.jpg" width="500" height="500" loading="lazy" alt="Man pondering">
+          <p class="card-font">Patience</p>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=CrgEk2DWXUI" class="card">
+          <img src="images/humility_card.jpg" width="500" height="500" loading="lazy" alt="Man praying">
+          <p class="card-font">Humility</p>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=wmbhX536Uek" class="card">
+          <img src="images/diligence_card.jpg" width="500" height="500" loading="lazy" alt="Man pondering">
+          <p class="card-font">Diligence</p>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=KPDq8eKnhd0" class="card">
+          <img src="images/obedience_card.jpg" width="500" height="500" loading="lazy" alt="Man pondering">
+          <p class="card-font">Obedience</p>
+        </a>
+      </section>
+    </article>
+
+    <section>
+      <h2>Experiences with Christ-like Character</h2>
+
+    </section>
+  </main>
+
+
+
+  <footer>
+    <p>Adam Ross - Learning Christ-like Character</p>
+  </footer>
+
 </body>
 
 </html>

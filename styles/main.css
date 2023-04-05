@@ -1,181 +1,873 @@
-:root {
-  --text-color: #333;
-  --floral-white: #f5f1e8;
-  --roman-silver: #878a98;
-  --space-cadet: #1c254a;
-  --space-cadet-light: #5b63be;
-  --body-font: "Inter", sans-serif;
-  --heading-font: "Playfair Display", serif;
-}
-
-* {
+/*****************************************************/
+/* This semester we will be using my variation of    */
+/* Josh Comeau's CSS Reset instead of normalize      */
+/* Read more at                                      */
+/* https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*****************************************************/
+/* Always add your CSS below the reset CSS           */
+/*****************************************************/
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-.hidden {
-  display: none;
+* {
+  margin: 0;
+  /* this an experimental line-height; if it breaks, add line-height: 1.5 to body */
+  line-height: calc(1em + 0.5rem);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* until you get a feel for overflow, I'll keep these next two commented out */
+/* p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+} */
+
+/* p {
+  overflow-wrap: break-word;
+  hyphens: auto;
+} */
+
+/* temp CSS for HTML only assignments */
+picture img {
+  width: 100%;
+}
+
+svg {
+  width: 200px;
+}
+
+/* temp fix to size about img */
+img[srcset] {
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+  width: 200px;
+}
+
+/************ add your CSS here *****************/
+
+:root {
+  --color-font: #444;
+  --link: #557a82;
+  --light-blue: #9dc6be;
+  --tan: #d3c2ae;
+  --seafoam: #a4c4bf;
+  --cream: #fffcef;
+  --dark-blue: #40656d;
+  --color-font-white: #f0f8ff;
+  --book-height: 300px;
+  --book-width: 200px;
+  --width-cover-edge: 8px;
+  --color-end-paper: rgb(36, 36, 81);
+  --color-edge: rgb(36, 36, 81);
+  --color-spine: rgb(23, 23, 50);
+  --gutter: 1vw;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  font-family: var(--body-font);
-  color: var(--text-color);
-  background-color: var(--floral-white);
-  font-size: 1.2rem;
-  line-height: 1.4;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--heading-font);
-  font-weight: 700;
-  color: var(--space-cadet);
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-img {
-  display: block;
-  width: 100%;
-}
-
-a {
-  color: var(--space-cadet);
-  text-decoration: none;
 }
 
 main {
-  max-width: 50rem;
   align-self: center;
-  margin: 0 1.5rem;
-}
-
-.home main {
+  padding: 0 1rem;
   max-width: 80rem;
+  color: var(--color-font);
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: 3em;
+  font-family: "Courier New", Courier, monospace;
+  color: #444;
 }
 
-.hero {
-  position: relative;
+p {
+  text-align: center;
 }
 
-.hero .text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+p.scripture {
+  text-align: center;
+  font-family: "Bitter", serif;
+  color: var(--light-blue);
+  font-size: 1.5rem;
+  padding-bottom: 2rem;
+}
 
+p.instructions {
+  text-align: center;
+  padding: 2vw;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25vw;
+  color: #444;
+}
+
+p.instructions-list {
+  text-align: left;
+  padding: 0 2vw 2vw 2vw;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.25vw;
+  color: #444;
+}
+
+.instructions-border {
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0 2rem;
+  flex-direction: column;
+  border: 2px solid var(--dark-blue);
+  margin: 5rem;
 }
 
-.hero h1 {
-  font-size: clamp(4rem, 7vw, 7rem);
-  color: var(--floral-white);
-  font-weight: 700;
-  text-shadow: 2px 2px #000;
-  line-height: 1;
-  margin: 0;
-}
-
-.hero p {
-  color: var(--floral-white);
-  font-size: 1.6rem;
-  line-height: 1;
-}
-
-nav {
-  margin: 2rem 1.5rem 6rem;
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  margin: 0 auto;
-  padding: 0;
-  max-width: 80rem;
-}
-
-nav a {
-  display: block;
-  padding: 1rem;
-  font-size: 1.4rem;
-}
-
-nav a:not([href]) {
-  color: var(--roman-silver);
-}
-
-nav a::after {
-  content: "";
-  display: block;
-  width: calc(100% + 12px);
-  height: 3px;
-  margin-left: -6px;
-  margin-top: 6px;
-  background-color: var(--space-cadet-light);
-  transform: scale(0);
-  transition: transform 200ms ease-in, color 300ms ease-in;
-  transform-origin: right;
-}
-
-nav a[href]:hover {
-  color: var(--space-cadet-light);
-}
-
-nav a[href]:hover::after {
-  transform: scale(1);
-  transform-origin: left;
+article {
+  margin-bottom: 10rem;
 }
 
 .panel {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (min-width: 601px) {
+.panel-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+aside {
+  margin-bottom: 3em;
+  padding: 0 1rem;
+  max-width: 70rem;
+}
+
+footer {
+  padding: 2em;
+  background-color: var(--color-font);
+  font-family: "Bitter", serif;
+  font-weight: bold;
+  color: var(--color-font-white);
+  margin-top: 10rem;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  align-self: stretch;
+  font-size: 1rem;
+}
+
+footer p {
+  margin-bottom: 0.5vw;
+}
+
+figure {
+  text-align: center;
+}
+
+div.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5rem;
+}
+
+div.container-book {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(1000px, 1fr));
+  gap: 1rem;
+  margin: 1rem;
+}
+
+/* div.book-spacing {
+  padding: 5rem;
+} */
+
+h1 {
+  font-family: "Bitter", serif;
+  color: var(--dark-blue);
+  font-size: clamp(4.5vw, 4.5vw, 10vw);
+  margin: var(--gutter);
+  letter-spacing: 1rem;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Bitter", serif;
+  color: var(--dark-blue);
+  font-size: clamp(4.5vw, 4.5vw, 10vw);
+  letter-spacing: 0.5rem;
+  margin: var(--gutter);
+  padding: 4vw;
+}
+
+h3 {
+  font-family: "Bitter", serif;
+  color: var(--seafoam);
+  font-size: clamp(3.5vw, 3.5vw, 10vw);
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h4 {
+  font-family: "Bitter", serif;
+  color: var(--seafoam);
+  font-size: clamp(2.5vw, 2.5vw, 10vw);
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a[href]:hover {
+  color: var(--seafoam);
+  transition: color 300ms;
+}
+
+a.to-top {
+  font-family: "Bitter", serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.button[href] {
+  font-size: 1rem;
+  font-family: "Bitter", serif;
+  font-weight: bold;
+  color: var(--dark-blue);
+  border: 1px solid var(--dark-blue);
+  padding: 0.5em 2.5em;
+  /* margin: 5rem; */
+  display: inline-block;
+
+  transition: background-color 300ms, color 300ms;
+}
+
+.button[href]:hover {
+  background-color: var(--dark-blue);
+  color: #fff;
+  text-decoration: none;
+}
+
+.hero {
+  height: 90vh;
+  position: relative;
+}
+
+.hero .heading-background {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  margin: var(--gutter);
+  text-align: center;
+  font-weight: 400;
+  font-size: clamp(3.5vw, 4.5vw, 10vw);
+  color: var(--dark-blue);
+  letter-spacing: 2vw;
+  line-height: 2;
+}
+
+.keyword {
+  font-size: 20vw;
+  color: transparent;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 700;
+  background: linear-gradient(
+    to right,
+    #a77934,
+    #cb9b51,
+    #f6e387,
+    #f6e590,
+    #f6e27a,
+    #cb9b51,
+    #a77934
+  );
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin: var(--gutter);
+}
+
+.keyword-charity {
+  justify-content: flex-end;
+  font-size: clamp(16vw, 16vw, 10vw);
+  font-weight: bold;
+  text-shadow: 5px 5px 10px white;
+  font-family: "Times New Roman", Times, serif;
+  margin: var(--gutter);
+}
+
+.hero h1 .keyword-nav {
+  font-size: clamp(16vw, 16vw, 10vw);
+  font-weight: bold;
+  text-shadow: 6px 6px 10px white;
+  font-family: "Times New Roman", Times, serif;
+  color: var(--dark-blue);
+  margin: var(--gutter);
+}
+
+.hero p {
+  text-align: center;
+  font-family: "Bitter", serif;
+  font-weight: 1000;
+  color: var(--light-blue);
+  font-size: clamp(1.5vw, 2vw, 5vw);
+  line-height: 2;
+  margin: var(--gutter);
+}
+
+.hero::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, #fff 20%, transparent 100%);
+}
+
+picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero picture {
+  height: 100%;
+}
+
+.card {
+  max-width: 170px;
+  padding: 15px;
+  box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  transition: transform 300ms ease;
+}
+
+.card a {
+  color: var(--dark-blue);
+}
+
+p.card-font {
+  font-family: "Bitter", serif;
+}
+
+.card img {
+  border-radius: 30%;
+  padding: 1rem 1rem;
+  transition: box-shadow 300ms;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  color: var(--light-blue);
+}
+
+.icon {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1rem;
+  font-family: "Bitter", serif;
+}
+
+.icon-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+}
+
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+a.icon:hover {
+  -webkit-animation: shake-top 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-top 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Bitter", serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-color: var(--dark-blue);
+  overflow-x: hidden;
+  padding: 0px;
+}
+
+.close nav {
+  position: fixed;
+  inset: 0 70vw 50vw 0;
+  background-color: var(--light-blue);
+  display: flex;
+  flex-direction: column;
+}
+
+header nav a {
+  display: block;
+}
+
+.listitem {
+  margin: 2.5rem 0 2.5rem 0;
+  color: var(--seafoam);
+}
+
+.listitem a {
+  color: aliceblue;
+  padding: 1rem 2rem 1rem 2rem;
+  border: 2px solid transparent;
+}
+
+.listitem a:hover {
+  color: aliceblue;
+  border-top: 2px solid aliceblue;
+  border-bottom: 2px solid aliceblue;
+  transition: 300ms ease-in-out;
+}
+
+.menu-icon {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 1.5rem;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--seafoam);
+  z-index: 2;
+}
+
+.menu-icon line {
+  stroke: #fff;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  transform-origin: center;
+  transition: transform 300ms ease;
+}
+
+.menu-icon line:first-child {
+  transform: translateY(16%);
+}
+
+.menu-icon line:last-child {
+  transform: translateY(-16%);
+}
+
+/* JavaScript toggles a "close" class on the <nav> when the menu-icon is clicked */
+.close line:first-child {
+  transform: rotate(135deg);
+}
+
+.close line:last-child {
+  transform: rotate(-135deg);
+}
+
+textarea {
+  display: flex;
+  justify-content: center;
+}
+
+.cover-bible img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* the book container */
+.book {
+  position: relative;
+  width: var(--book-width);
+  height: var(--book-height);
+
+  perspective: 2000px;
+
+  /* transfrom-style only applies to direct children. It is not 
+  inherited   */
+  transform-style: preserve-3d;
+
+  /* needed if in flexbox column to keep from squashing 
+     empty elements */
+  flex: 0 0 auto;
+
+  /* add room for the animation   */
+  margin-bottom: 32px;
+}
+
+/* position cover and pages relative to book container 
+   add preserve-3D for when they are rotated. */
+.cover-front,
+.cover-front div,
+.cover-back {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+/**** front cover ****/
+.cover-front {
+  transform: rotateY(-30deg) translateZ(8px);
+  transform-origin: left;
+  transition: transform 0.8s ease;
+}
+
+/* outside front cover */
+.cover-front div {
+  background: var(--color-end-paper);
+  /* backface-visiblity hides the backside of an element when 
+   it is rotated */
+  backface-visibility: hidden;
+}
+
+/* inside front cover  */
+.cover-front div:last-child {
+  transform: rotateY(180deg);
+}
+
+/* add the appearance of depth to the edge of the cover */
+.cover-front div:first-child::before {
+  content: "";
+  position: absolute;
+  background-color: var(--color-edge);
+  width: var(--width-cover-edge);
+  top: 0;
+  left: 0;
+  height: var(--book-height);
+  transform: rotateY(90deg) translateZ(197px);
+}
+
+.cover-back {
+  background: var(--color-edge);
+  transform-origin: left;
+  transform: rotateY(-15deg) translateZ(-1.5px);
+}
+
+/**** pages ****/
+.pages,
+.pages > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+}
+
+.pages {
+  width: 100%;
+  height: 98%;
+  top: 1%;
+  left: 3%;
+}
+
+.pages > div {
+  width: 100%;
+  height: 100%;
+  transform-origin: left;
+  transition: transform 600ms ease;
+  background: linear-gradient(to left, #e9dfd3, #fffbf6);
+  box-shadow: inset 0px -1px 2px rgb(50 50 50 / 0.2),
+    inset -1px 0px 1px rgb(150 150 150 / 0.2);
+  border-radius: 0px 5px 5px 0px;
+}
+
+.pages div:nth-child(1) {
+  transform: rotateY(-23deg);
+  transition-duration: 0.6s;
+}
+
+.pages div:nth-child(2) {
+  transform: rotateY(-25deg);
+  transition-duration: 0.6s;
+}
+
+.pages div:nth-child(3) {
+  transform: rotateY(-27deg);
+  transition-duration: 0.4s;
+}
+
+.pages div:nth-child(4) {
+  transform: rotateY(-29deg);
+  transition-duration: 0.5s;
+}
+
+.pages div:nth-child(5) {
+  transform: rotateY(-31deg);
+  transition-duration: 0.6s;
+}
+
+/**** message ****/
+.message {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1rem;
+  overflow-y: scroll;
+}
+
+.message p {
+  color: #222;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 0.1em 0.4em;
+  margin-bottom: 1em;
+  overflow-y: scroll;
+}
+
+/**** spine  ****/
+.book-spine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 16px;
+  transform: rotateY(60deg) translateX(-5px) translateZ(-12px);
+  background-color: var(--color-spine);
+}
+
+/**** animations ****/
+.book:hover > .cover-front {
+  transform: rotateY(-160deg) translateZ(0);
+}
+
+.book:hover > .pages div:nth-child(1) {
+  transform: rotateY(-25deg);
+  transition-duration: 1.5s;
+}
+
+.book:hover > .pages div:nth-child(2) {
+  transform: rotateY(-30deg);
+  transition-duration: 1.8s;
+}
+
+.book:hover > .pages div:nth-child(3) {
+  transform: rotateY(-145deg);
+  transition-duration: 1.6s;
+}
+
+.book:hover > .pages div:nth-child(4) {
+  transform: rotateY(-150deg);
+  transition-duration: 1.4s;
+}
+
+.book:hover > .pages div:nth-child(5) {
+  transform: rotateY(-155deg);
+  transition-duration: 1.2s;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2023-3-27 14:52:55
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation wobble-hor-bottom
+ * ----------------------------------------
+ */
+/* ----------------------------------------------
+ * Generated by Animista on 2023-3-27 22:19:57
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shake-top
+ * ----------------------------------------
+ */
+/* ----------------------------------------------
+ * Generated by Animista on 2023-3-27 22:23:7
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation rotate-scale-up
+ * ----------------------------------------
+ */
+/* ----------------------------------------------
+ * Generated by Animista on 2023-3-27 22:24:26
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+/* ----------------------------------------------
+ * Generated by Animista on 2023-3-27 22:37:19
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation shake-top
+ * ----------------------------------------
+ */
+@-webkit-keyframes shake-top {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+  60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes shake-top {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+    transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+  }
+
+  90% {
+    -webkit-transform: rotate(2deg);
+    transform: rotate(2deg);
+  }
+}
+
+/* Media Queries */
+@media (min-width: 401px) {
+  .main {
+    max-width: 50rem;
+  }
+}
+
+@media (min-width: 801px) {
+  .main {
+    max-width: 80rem;
+  }
+}
+
+/* Media Query
+@media (min-width 500px) {
   .panel {
     flex-direction: row;
   }
 
-  .panel .text-wrapper {
-    flex: 1 1 60%;
+  .panel h2 {
+    margin: 0;
   }
 
-  .panel .image-wrapper {
+  .panel .text-wrapper {
     flex: 1 1 40%;
   }
 
-  .panel h2 {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 901px) {
-  .hero {
-    height: 80vh;
-  }
-  .hero img {
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .panel .text-wrapper {
-    flex: 1 1 50%;
-  }
-
   .panel .image-wrapper {
-    flex: 1 1 50%;
+    order: 0;
+    flex: 1 1 60%;
   }
-}
+} */
