@@ -130,8 +130,8 @@ p.scripture {
   font-family: "Bitter", serif;
   font-weight: bold;
   color: var(--light-blue);
-  font-size: 2rem;
-  padding-bottom: 2rem;
+  font-size: 1.5rem;
+  padding: .5rem;
 }
 
 p.instructions {
@@ -150,6 +150,14 @@ p.instructions-list {
   color: #444;
 }
 
+p.about {
+  text-align: center;
+  font-family: "Bitter", serif;
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem;
+}
+
 .instructions-border {
   display: flex;
   flex-direction: column;
@@ -159,6 +167,44 @@ p.instructions-list {
 
 article {
   margin-bottom: 10rem;
+}
+
+section.about-article {
+  /* display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; */
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 50% 50%;
+  gap: 1rem;
+  margin: 1rem;
+}
+
+.round-img {
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-author {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 1;
+  borde
+}
+
+.family {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 1;
+}
+
+.kayla {
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+  display: flex;
+  align-items: center;
 }
 
 .panel {
@@ -207,7 +253,7 @@ div.container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 5rem;
+  padding: 1rem;
 }
 
 div.container-book {
@@ -215,14 +261,10 @@ div.container-book {
   flex-wrap: wrap;
   justify-content: space-evenly; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
   margin: 1rem;
 }
-
-/* div.book-spacing {
-  padding: 5rem;
-} */
 
 h1 {
   font-family: "Bitter", serif;
@@ -333,20 +375,6 @@ a.to-top {
   justify-content: center;
 }
 
-.hero-patience {
-  height: 90vh;
-  position: relative;
-}
-
-.hero-patience .heading-background {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 .hero h1 {
   margin: var(--gutter);
   text-align: center;
@@ -364,13 +392,9 @@ a.to-top {
   font-weight: 700;
   background: linear-gradient(
     to right,
-    #a77934,
-    #cb9b51,
-    #f6e387,
-    #f6e590,
-    #f6e27a,
-    #cb9b51,
-    #a77934
+    /* #a77934, */ #cb9b51,
+    /* #f6e387, */ #f6e590,
+    /* #f6e27a, */ #cb9b51 /* #a77934 */
   );
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
@@ -384,15 +408,15 @@ a.to-top {
   display: block;
   position: absolute;
   inset: 0;
-  top: 11rem;
-  bottom: 7rem;
+  top: 16rem;
+  bottom: 11rem;
   left: 11rem;
   right: 11rem;
   background: linear-gradient(
     var(--direction, -45deg),
     transparent,
     transparent 45%,
-    rgba(234, 226, 226, 0.472) 50%,
+    rgba(255, 255, 255, 0.213) 50%,
     transparent 55%
   );
 
@@ -401,28 +425,38 @@ a.to-top {
 }
 
 .keyword-charity {
-  justify-content: flex-end;
   font-size: clamp(16vw, 16vw, 10vw);
   font-weight: bold;
-  text-shadow: 5px 5px 10px white;
   font-family: "Times New Roman", Times, serif;
   margin: var(--gutter);
 }
 
-.keyword-patience {
-  justify-content: flex-end;
-  color: white;
-  text-shadow: 3px 3px 8px black;
-  font-size: clamp(14vw, 14vw, 10vw);
+.keyword-diligence {
+  font-size: clamp(13vw, 13vw, 10vw);
   font-weight: bold;
   font-family: "Times New Roman", Times, serif;
   margin: var(--gutter);
+}
+
+.keyword-knowledge {
+  font-size: clamp(12vw, 12vw, 10vw);
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  margin: var(--gutter);
+  letter-spacing: 1rem;
+}
+
+.keyword-selflessness {
+  font-size: clamp(11vw, 11vw, 10vw);
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  margin: var(--gutter);
+  letter-spacing: .8rem;
 }
 
 .hero h1 .keyword-nav {
   font-size: clamp(16vw, 16vw, 10vw);
   font-weight: bold;
-  text-shadow: 3px 3px 8px white;
   font-family: "Times New Roman", Times, serif;
   color: var(--dark-blue);
   margin: var(--gutter);
@@ -463,6 +497,25 @@ picture img {
   height: 100%;
 }
 
+.round-img img {
+  width: 30rem;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--dark-blue);
+}
+
+.kayla img {
+  width: 30rem;
+  height: auto;
+  border-radius: 50%;
+  border: 5px solid var(--dark-blue);
+}
+
+.family img {
+  border-radius: 20%;
+  border: 5px solid var(--dark-blue);
+}
+
 .video-background {
   background: #000;
   position: absolute;
@@ -483,7 +536,8 @@ picture img {
 }
 
 .card {
-  max-width: 170px;
+  display: grid;
+  grid-template-rows: 1fr auto;
   padding: 15px;
   box-shadow: 2px 3px 3px 3px rgba(0, 0, 0, 0.2);
   background-color: #fff;
@@ -496,19 +550,24 @@ picture img {
 
 p.card-font {
   font-family: "Bitter", serif;
+  margin: 1rem 0 0;
 }
 
 .card img {
   border-radius: 30%;
   padding: 1rem 1rem;
   transition: box-shadow 300ms;
+  /* height: 100%;
+  object-fit: cover; */
 }
 
 .cards {
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 3rem;
   padding: 1rem;
   font-size: 1rem;
@@ -743,6 +802,13 @@ textarea {
   overflow-y: scroll;
 }
 
+.scripture-grid {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  align-items: center;
+  max-width: 100%;
+}
+
 /**** spine  ****/
 .book-spine {
   position: absolute;
@@ -905,11 +971,19 @@ textarea {
   .main {
     max-width: 50rem;
   }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (min-width: 801px) {
   .main {
     max-width: 80rem;
+  }
+
+  .cards {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
@@ -926,22 +1000,4 @@ textarea {
   }
 }
 
-/* Media Query
-@media (min-width 500px) {
-  .panel {
-    flex-direction: row;
-  }
 
-  .panel h2 {
-    margin: 0;
-  }
-
-  .panel .text-wrapper {
-    flex: 1 1 40%;
-  }
-
-  .panel .image-wrapper {
-    order: 0;
-    flex: 1 1 60%;
-  }
-} */
